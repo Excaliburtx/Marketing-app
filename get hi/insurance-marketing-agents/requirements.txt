@@ -1,20 +1,13 @@
-# Streamlit Cloud compatible requirements (lighter)
 streamlit>=1.38.0
 python-dotenv>=1.0.0
 pydantic>=2.7.0,<2.10
 pydantic-settings>=2.4.0
-
-# LLM
 openai>=1.40.0
 langchain>=0.3.0
 langchain-openai>=0.2.0
 langchain-community>=0.3.0
-
-# Agent framework
 crewai>=0.80.0,<0.90.0
 crewai-tools>=0.14.0,<0.20.0
-
-# Data & utils
 pandas>=2.2.0
 requests>=2.32.0
 tenacity>=8.5.0
