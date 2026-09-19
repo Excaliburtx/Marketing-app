@@ -1,0 +1,87 @@
+collect_context_task:
+  description: >
+    1. Call the product context tool to load definitions and key metrics for
+       Pre-need, At-need, and Annuities.
+    2. Summarize the product lines and the most important marketing KPIs.
+    3. Save a short context summary using the save data tool (filename:
+       product_context_summary.txt).
+    Focus on the product line(s) requested by the user: {product_line}.
+    Additional user instructions: {user_request}
+  expected_output: >
+    A concise summary of the relevant product line(s) and key marketing
+    metrics, confirming that context has been saved.
+
+research_market_task:
+  description: >
+    Using the product context already gathered, produce a structured market
+    research brief for {product_line}.
+
+    Cover (as relevant):
+    - Current market size / growth signals (use known public benchmarks if
+      available; clearly mark estimates vs verified data)
+    - Main distribution channels
+    - Competitive factors (rates, product features, carriers commonly seen)
+    - Buyer / prospect characteristics
+    - Regulatory or compliance notes that affect marketing
+    - Emerging opportunities or threats
+
+    Save the research notes with the save data tool.
+    User request details: {user_request}
+  expected_output: >
+    A structured market research brief saved to the data store, ready for
+    analysis.
+
+analyze_data_task:
+  description: >
+    Analyze the collected context and market research for {product_line}.
+
+    Produce:
+    - Top 3–5 insights relevant to marketing and distribution
+    - Strengths and gaps
+    - Prioritized opportunities
+    - Risks or watch-outs
+    - Suggested marketing focus areas for the next 1–2 quarters
+
+    Be specific and actionable. User request: {user_request}
+  expected_output: >
+    Clear analytical insights and prioritized recommendations that a marketing
+    leader can use.
+
+write_report_task:
+  description: >
+    Write a professional marketing report for {product_line} based on the
+    research and analysis.
+
+    Required structure:
+    1. Executive Summary (5–8 sentences)
+    2. Product / Market Overview
+    3. Key Findings & Insights
+    4. Competitive & Channel Observations
+    5. Opportunities & Recommendations
+    6. Compliance Notes / Caveats
+    7. Suggested Next Steps
+
+    Use clean Markdown. After writing, save the report with the save report
+    tool using an appropriate title and product_line={product_line}.
+    User request: {user_request}
+  expected_output: >
+    A complete Markdown marketing report that has been saved to the reports
+    directory.
+
+compliance_review_task:
+  description: >
+    Review the draft marketing report for {product_line}.
+
+    Check for:
+    - Absolute guarantee language that should be qualified
+    - Claims that sound like "risk-free" or unsubstantiated superiority
+    - Tone that could be seen as high-pressure or misleading
+    - Missing caveats around product guarantees being subject to claims-paying ability
+
+    Provide a short compliance review note and, if needed, a lightly revised
+    version of any problematic paragraphs. Final output should confirm the
+    report is acceptable or list required changes.
+    User request: {user_request}
+  expected_output: >
+    Compliance review summary + any required language adjustments. Final
+    confirmation that the report is ready for internal use (or list of fixes).
